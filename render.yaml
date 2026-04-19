@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: viewvoice-api
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: AZURE_ENDPOINT
+        sync: false   # Set this manually in Render dashboard
+      - key: AZURE_KEY
+        sync: false   # Set this manually in Render dashboard
+      - key: AZURE_MODEL_ID
+        sync: false   # Set this manually in Render dashboard
+      - key: ALLOWED_ORIGINS
+        sync: false   # Set to your Vercel URL, e.g. https://viewvoice.vercel.app
